@@ -1,9 +1,9 @@
 import Paho from "paho-mqtt";
 import { useState, useEffect } from "react";
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, KeyboardAvoidingView, Platform } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
-import { useNavigation } from '@react-navigation/native'
+// import { useNavigation } from '@react-navigation/native'
 
 
 export default function Ambientes() {
@@ -16,8 +16,8 @@ export default function Ambientes() {
 
     useEffect(() => {
         const mqttClient = new Paho.Client(
-            "192.168.0.105",
-            Number(1884),
+            "192.168.156.142",
+            Number(8000),
             `id_ufpe-${parseInt(Math.random() * 100)}`
         );
 
