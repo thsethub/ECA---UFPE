@@ -12,12 +12,13 @@ export default function Ambientes() {
     const [connected, setConnected] = useState(false);
     const [value, setValue] = useState('');
     const [value1, setValue1] = useState('');
+    const [value2, setValue2] = useState('');
     // const navigation = useNavigation();
 
     useEffect(() => {
         const mqttClient = new Paho.Client(
-            "192.168.156.142",
-            Number(8000),
+            "192.168.15.174",
+            Number(1884),
             `id_ufpe-${parseInt(Math.random() * 100)}`
         );
 
@@ -28,6 +29,7 @@ export default function Ambientes() {
                 console.log("Conectado!");
                 mqttClient.subscribe("clp1");
                 mqttClient.subscribe("circuitos");
+                mqttClient.subscribe("salaRedes");
                 setConnected(true);
                 setClient(mqttClient);
             },
@@ -48,11 +50,14 @@ export default function Ambientes() {
         if (message.destinationName === "circuitos") {
             setValue1(message.payloadString);
         }
+        if (message.destinationName === "salaRedes") {
+            setValue2(message.payloadString);
+        }
     }
 
     function msgClp1() {
         if (connected) {
-            const message = new Paho.Message("teste");
+            const message = new Paho.Message("mensagemSalaClp1");
             message.destinationName = "clp1";
             client.send(message);
         }
@@ -60,12 +65,19 @@ export default function Ambientes() {
 
     function msgCircutitos() {
         if (connected) {
-            const message1 = new Paho.Message("teste");
+            const message1 = new Paho.Message("mensagemSalaCircuitos");
             message1.destinationName = "circuitos"
             client.send(message1);
         }
     }
-
+    function msgSalaRedes() {
+        if (connected) {
+            const message2 = new Paho.Message("mensagemSalaRedes");
+            message2.destinationName = "salaRedes"
+            client.send(message2);
+        }
+    }
+    
 
     return (
         <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : null} keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}>
@@ -93,6 +105,15 @@ export default function Ambientes() {
                             onPress={msgCircutitos}
                         >
                             <Text style={styles.buttonText}>Laboratório de Circuitos</Text>
+                        </TouchableOpacity>
+                        </View>
+                    <View style={styles.buttonContainer}>
+                        <Text style={styles.text}>Sala de Redes: {value2}</Text>
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={msgSalaRedes}
+                        >
+                            <Text style={styles.buttonText}>Sala de Redes</Text>
                         </TouchableOpacity>
                     </View>
                 </Animatable.View>

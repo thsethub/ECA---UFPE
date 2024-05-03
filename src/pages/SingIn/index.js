@@ -89,7 +89,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         color: 'rgba(0, 0, 0, 0.61)',
         alignSelf: 'flex-start',
-        paddingLeft: '5%'
+        paddingLeft: '5%',
+        paddingVertical: 5
     },
     input: {
         width: 334,
@@ -99,6 +100,7 @@ const styles = StyleSheet.create({
         fontFamily: 'AnonymousPro_400Regular',
         backgroundColor: '#FFF',
         borderRadius: 4,
+        // paddingVertical: 
         paddingHorizontal: 15,
         borderTopLeftRadius: 100,
         borderBottomLeftRadius: 35,
