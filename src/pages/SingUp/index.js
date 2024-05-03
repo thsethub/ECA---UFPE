@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Platform, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Alert } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
+        fontFamily: 'AnonymousPro_700Bold',
         display: 'flex',
-        fontWeight: 'bold',
         color: 'rgba(0, 0, 0, 0.61)',
         alignSelf: 'flex-start',
         paddingLeft: '5%'
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     input: {
         width: 334,
         height: 64,
+        fontFamily: 'AnonymousPro_400Regular',
         backgroundColor: '#FFF',
         borderRadius: 4,
         paddingHorizontal: 15,
@@ -143,7 +144,8 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#FFF',
         fontSize: 24,
-        fontWeight: 'bold',
+        fontFamily: 'AnonymousPro_700Bold',
+        paddingVertical: 3
     },
     buttonRegister: {
         marginTop: 14,
@@ -151,10 +153,6 @@ const styles = StyleSheet.create({
     },
     registerText: {
         color: '#a1a1a1'
-    },
-    logo1: {
-        width: 371.17,
-        height: 141
     },
     buttonSing: {
         position: 'absolute',
@@ -164,6 +162,6 @@ const styles = StyleSheet.create({
     },
     textSing: {
         color: '#12499F',
-        fontWeight: 'bold',
+        fontFamily: 'AnonymousPro_700Bold',
     }
 });

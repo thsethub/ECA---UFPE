@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#FFF',
         fontSize: 16,
-        fontWeight: 'bold',
+        fontFamily: 'AnonymousPro_700Bold'
     },
     logo1: {
         width: 371.17,
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 18,
         display: 'flex',
-        fontWeight: 'bold',
+        fontFamily: 'AnonymousPro_700Bold',
         color: 'rgba(0, 0, 0, 0.61)',
         alignSelf: 'flex-start',
         paddingLeft: '5%',

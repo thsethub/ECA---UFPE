@@ -1,12 +1,12 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Platform, Alert } from 'react-native';
+import { React } from 'react';
+import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Platform } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 
 export default function SingIn() {
     const navigation = useNavigation();
-
+    
 
     return (
         <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : null} keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}>
@@ -20,7 +20,7 @@ export default function SingIn() {
                 <Animatable.View animation="fadeInUp" style={styles.containerForm}>
                     <Text style={styles.title}>Email</Text>
                     <TextInput
-                        placeholder="Digite um email..."
+                        placeholder="Digite seu email..."
                         style={styles.input}
                     />
 
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         marginTop: '15%',
         marginBottom: '15%',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     scrollViewContent: {
         flexGrow: 1,
@@ -83,8 +83,10 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
+        fontFamily: 'AnonymousPro_700Bold',
+        top: 15,
+        right: 10,
         display: 'flex',
-        fontWeight: 'bold',
         color: 'rgba(0, 0, 0, 0.61)',
         alignSelf: 'flex-start',
         paddingLeft: '5%'
@@ -92,6 +94,9 @@ const styles = StyleSheet.create({
     input: {
         width: 334,
         height: 64,
+        right: 10,
+        top: 15,
+        fontFamily: 'AnonymousPro_400Regular',
         backgroundColor: '#FFF',
         borderRadius: 4,
         paddingHorizontal: 15,
@@ -105,11 +110,13 @@ const styles = StyleSheet.create({
             width: 0,
             height: 4,
         },
-        elevation: 4, // Elevação para sombra no Android
+        elevation: 4,
     },
     button: {
         backgroundColor: '#12499F',
         width: '100%',
+        right: 10,
+        top: 15,
         borderRadius: 4,
         paddingVertical: 8,
         marginTop: 12,
@@ -123,7 +130,8 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#FFF',
         fontSize: 24,
-        fontWeight: 'bold',
+        fontFamily: 'AnonymousPro_700Bold',
+        paddingVertical: 3
     },
     buttonRegister: {
         marginTop: 14,
@@ -144,6 +152,6 @@ const styles = StyleSheet.create({
     },
     textSing: {
         color: '#12499F',
-        fontWeight: 'bold',
+        fontFamily: 'AnonymousPro_700Bold',
     }
 });

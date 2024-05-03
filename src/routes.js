@@ -1,4 +1,4 @@
-import { createNativeStackNavigator, HeaderBackButton } from '@react-navigation/native-stack'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import SingIn from './pages/SingIn/index'
 import SingUp from './pages/SingUp/index'
